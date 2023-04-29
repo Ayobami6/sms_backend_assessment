@@ -10,7 +10,7 @@ class Courses(models.Model):
     course_description = models.TextField(blank=True)
     course_unit = models.IntegerField()
     course_status = models.BooleanField(default=True)
-    staff_id = models.ForeignKey(Staffs, on_delete=models.CASCADE)
+    staff_id = models.ForeignKey(Staffs, on_delete=models.CASCADE, null=True)
     course_created_at = models.DateTimeField(auto_now_add=True)
     course_updated_at = models.DateTimeField(auto_now=True)
 
