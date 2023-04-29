@@ -8,7 +8,9 @@ from rest_framework.response import Response
 
 
 class StudentViewSet(viewsets.ModelViewSet):
+    serializer_class = StudentSerializer
     # GET
+
     def list(self, request):
         students = Student.objects.all()
         serializer = StudentSerializer(students, many=True)

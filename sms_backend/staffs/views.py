@@ -4,11 +4,11 @@ from .models import Staffs
 from .serializers import StaffSerializer
 from rest_framework.response import Response
 
-# Create your views here.
-
 
 class StaffViewSet(viewsets.ModelViewSet):
+    serializer_class = StaffSerializer
     # GET
+
     def list(self, request):
         staffs = Staffs.objects.all()
         serializer = StaffSerializer(staffs, many=True)

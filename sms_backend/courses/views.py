@@ -7,7 +7,9 @@ from rest_framework.response import Response
 
 
 class CoursesApiViewSet(viewsets.ModelViewSet):
+    serializer_class = CoursesSerializer
     # GET
+
     def list(self, request):
         courses = Courses.objects.all()
         serializer = CoursesSerializer(courses, many=True)
