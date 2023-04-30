@@ -27,9 +27,9 @@ router = routers.DefaultRouter()
 # Define schema view for Swagger documentation
 schema_view = get_schema_view(
     openapi.Info(
-        title="Your API Title",
+        title="SMS API Docs",
         default_version='v1',
-        description="Your API description",
+        description="School Management System API Documentation",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@yourapi.local"),
         license=openapi.License(name="BSD License"),
@@ -43,6 +43,7 @@ urlpatterns = [
     path('api/', include('students.urls')),
     path('api/', include('courses.urls')),  # new
     path('api/', include('staffs.urls')),
+    path('api/', include('results.urls')),
     path('', include(router.urls)),
     path('swagger/', schema_view.with_ui('swagger',
          cache_timeout=0), name='schema-swagger-ui'),
