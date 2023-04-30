@@ -23,8 +23,6 @@ class StudentUser(AbstractUser):
 
 
 class Student(models.Model):
-    student_user = models.OneToOneField(
-        StudentUser, on_delete=models.CASCADE)
     GENDER_CHOICES = [("male", "Male"), ("female", "Female")]
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
@@ -47,7 +45,7 @@ class Student(models.Model):
     address = models.TextField(blank=True)
 
 
-# create a autogenerate reg_no for the student
+# create an autogenerate reg_no for the student
 @receiver(pre_save, sender=Student)
 def create_student_reg_no(sender, instance, **kwargs):
     if not instance.reg_no:

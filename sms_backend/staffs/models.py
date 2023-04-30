@@ -18,8 +18,6 @@ class StaffUser(AbstractUser):
 
 
 class Staffs(models.Model):
-    staff_user = models.OneToOneField(
-        StaffUser, on_delete=models.CASCADE, default=None)
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=20)
