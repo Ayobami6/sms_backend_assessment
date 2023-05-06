@@ -36,3 +36,41 @@ Step 5: Creating Different profile has listed below and their privileges
 Step 6: Deploying a swagger UI for exposing the RESTFULL controllers
 
 Step 6: Create an Instructor to create a course and module and also ability to delete it.
+
+## Set up and test
+
+### Install dependencies
+
+```bash
+python3 -m venv venv
+```
+
+```bash
+source venv/bin/activate
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the application
+
+```bash
+python3 manage.py runserver
+```
+
+### Swagger UI
+
+```bash
+http://127.0.0.1:8000/swagger/
+```
+
+![Swagger](Other.gif)
+
+### Postman
+
+```bash
+http://localhost:8000/api/students/
+```
+
+![Postman](lat.gif)
